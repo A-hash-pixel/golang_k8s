@@ -46,21 +46,9 @@ func main() {
 	if error != nil {
 		fmt.Println("Error in clientset", clientset)
 	}
-
 	Custom_output := Custom_struct(clientset)
-	// fmt.Println(Custom_output)
-	
 	for _, custom_struct := range Custom_output {
-		// var deployments string
-		// deployment_list := namespaces.List_Deployment(clientset, custom_struct.Namespace)
-		// // fmt.Println(deployment_list)
-		// fmt.Println(deployment_list.Items[0].Spec)
-		// if len(deployment_list.Items) > 0 {
-		// 	for _, val := range namespaces.Loop_deployment(deployment_list) {
-		// 		deployments = deployments + val
-		// 	}
 		fmt.Printf("Namespaces %v contains pods %v and is scheduled on %v .\n", custom_struct.Namespace, custom_struct.Pod, custom_struct.NodeName)
-		
 	}
 
 }
